@@ -77,10 +77,14 @@ header form {
     gap: 8px;
 }
 .card {
+    position: relative;
     background: #0F172A;
     text-align: center;
     padding: 10px;
     color: #fff;
     border-radius: 10px;
     height: 180px;
+}
+.card p:last-child {
+    margin-top: 80px;
 }

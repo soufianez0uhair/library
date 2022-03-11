@@ -8,6 +8,30 @@
     <title>Library</title>
 </head>
 <body>
-    
+    <header>
+        <h1>My library</h1>
+        <form>
+            <div class="title">
+                <input type="text" id="title" name="title" placeholder="Type book's title..">
+            </div>
+            <div class="author">
+                <input type="text" id="author" name="author" placeholder="Type author's name..">
+            </div>
+            <div class="read">
+                <select name="read" id="read-btn">
+                    <option value="read">read</option>
+                    <option value="not read yet">not read yet</option>
+                </select>
+            </div>
+            <button class="add-btn">Add</button>
+        </form>
+    </header>
+    <main class="mylibrary">
+        <div class="card">
+            <h2>Monster</h2>
+            <p>by <em>Naoki Urasawa</em></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

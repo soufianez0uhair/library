@@ -85,8 +85,10 @@ header form {
     border-radius: 10px;
     height: 180px;
 }
-.card p:last-child {
+.fa-trash {
     position: absolute;
-    top: 80%;
-    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    font-size: 25px;
+    color: red;
 }

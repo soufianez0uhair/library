@@ -1,5 +1,5 @@
 // an array to store user's books
-const myLibrary = [];
+let myLibrary = [];
 // a constructor for books
 function Book(title,author,read) {
     this.title = title
@@ -29,8 +29,15 @@ function displayBooks() {
     for(let i = 0; i < myLibrary.length; i++) {
         let book = document.createElement('div');
         book.setAttribute('class','card');
-        book.setAttribute('key',i);
-        book.innerHTML = `<h2>${myLibrary[i].title}</h2><p>by <em>${myLibrary[i].author}</em></p><p>${myLibrary[i].read}</p>`;
+        book.setAttribute('id',i);
+        book.innerHTML = `<h2>${myLibrary[i].title}</h2><p>by <em>${myLibrary[i].author}</em></p><p>${myLibrary[i].read}</p><i id="${i}" class="fa-solid fa-trash"></i>`;
         myLibraryGrid.appendChild(book)
     }
+    let bins = document.querySelectorAll('.fa-trash');
+    bins.forEach(bin => bin.addEventListener('click', () => deleteBook(bin.id)));
+}
+// a function that deletes the selected book
+function deleteBook(id) {
+    myLibrary = myLibrary.filter(item => myLibrary.indexOf(item) != id);
+    displayBooks();
 }

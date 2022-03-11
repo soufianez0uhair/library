@@ -1,1 +1,2 @@
 # library
+My main focus on this project's challenge is to use prototype on a real-life project while manipulating the DOM. It's also a good test and review of my DOM JS methods and problem-solving skills.

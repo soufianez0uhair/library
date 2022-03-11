@@ -17,16 +17,20 @@ function addBookToLibrary(event) {
     let book = new Book(titleInput,authorInput,readInput);
     // add the new book object to the myLibrary array
     myLibrary.unshift(book);
-    event.preventDefault();
     displayBooks();
+    event.preventDefault();
 }
 let addBtn = document.querySelector('.add-btn');
 addBtn.addEventListener('click', (event) => addBookToLibrary(event))
 // a function that loops through myLibrary and display books
 function displayBooks() {
     let myLibraryGrid = document.querySelector('.mylibrary');
-    let book = document.createElement('div');
-    book.setAttribute('class','card');
-    book.innerHTML = `<h2>${myLibrary[0].title}</h2><p>by <em>${myLibrary[0].author}</em></p><p>${myLibrary[0].read}</p>`;
-    myLibraryGrid.insertBefore(book, myLibraryGrid.firstChild);
+    myLibraryGrid.innerHTML = '';
+    for(let i = 0; i < myLibrary.length; i++) {
+        let book = document.createElement('div');
+        book.setAttribute('class','card');
+        book.setAttribute('key',i);
+        book.innerHTML = `<h2>${myLibrary[i].title}</h2><p>by <em>${myLibrary[i].author}</em></p><p>${myLibrary[i].read}</p>`;
+        myLibraryGrid.appendChild(book)
+    }
 }

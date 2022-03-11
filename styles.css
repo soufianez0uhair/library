@@ -86,5 +86,7 @@ header form {
     height: 180px;
 }
 .card p:last-child {
-    margin-top: 80px;
+    position: absolute;
+    top: 80%;
+    right: 10px;
 }

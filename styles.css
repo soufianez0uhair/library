@@ -91,4 +91,15 @@ header form {
     bottom: 10px;
     font-size: 25px;
     color: red;
+    cursor: pointer;
+}
+.fa-trash:hover {
+    color: #fff;
+}
+.fa-arrow-rotate-left {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 23px;
+    cursor: pointer;
 }

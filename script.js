@@ -30,14 +30,21 @@ function displayBooks() {
         let book = document.createElement('div');
         book.setAttribute('class','card');
         book.setAttribute('id',i);
-        book.innerHTML = `<h2>${myLibrary[i].title}</h2><p>by <em>${myLibrary[i].author}</em></p><p>${myLibrary[i].read}</p><i id="${i}" class="fa-solid fa-trash"></i>`;
+        book.innerHTML = `<h2>${myLibrary[i].title}</h2><p>by <em>${myLibrary[i].author}</em></p><p>${myLibrary[i].read}</p><i id="${i}" class="fa-solid fa-trash"></i><i id="${i}" class="fa-solid fa-arrow-rotate-left"></i>`;
         myLibraryGrid.appendChild(book)
     }
     let bins = document.querySelectorAll('.fa-trash');
     bins.forEach(bin => bin.addEventListener('click', () => deleteBook(bin.id)));
+    let readEditors = document.querySelectorAll('.fa-arrow-rotate-left');
+    readEditors.forEach(readEditor => readEditor.addEventListener('click', () => readHandler(readEditor.id)))
 }
 // a function that deletes the selected book
 function deleteBook(id) {
     myLibrary = myLibrary.filter(item => myLibrary.indexOf(item) != id);
+    displayBooks();
+}
+// a function that changes read status
+function readHandler(id) {
+    myLibrary[id].read = myLibrary[id].read == "read" ? "not read yet" : "read";
     displayBooks();
 }

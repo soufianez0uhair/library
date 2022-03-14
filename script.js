@@ -1,10 +1,12 @@
 // an array to store user's books
 let myLibrary = [];
 // a constructor for books
-function Book(title,author,read) {
-    this.title = title
-    this.author = author
-    this.read = read
+class Book {
+    constructor(title,author,read) {
+        this.title = title
+        this.author = author
+        this.read = read
+    }
 }
 // function to call when user wanna add some new book
 function addBookToLibrary(event) {

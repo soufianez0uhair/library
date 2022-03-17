@@ -16,10 +16,16 @@ function addBookToLibrary(event) {
     let  titleInput = document.querySelector('#title').value;
     let authorInput = document.querySelector('#author').value;
     let readInput = document.querySelector('#read-btn').value;
-    let book = new Book(titleInput,authorInput,readInput);
+    if(titleInput === '') {
+        alert('Please enter a title!');
+    } else if(authorInput === '') {
+        alert('Please enter author\'s name');
+    } else {
+        let book = new Book(titleInput,authorInput,readInput);
     // add the new book object to the myLibrary array
-    myLibrary.unshift(book);
-    displayBooks();
+        myLibrary.unshift(book);
+        displayBooks();
+    }
     event.preventDefault();
 }
 let addBtn = document.querySelector('.add-btn');
